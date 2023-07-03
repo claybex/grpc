@@ -1,0 +1,22 @@
+syntax = "proto3";
+option go_package = "github.com/claybex/grpc/invoicer";
+
+message Amount {
+    int64 amount = 1;
+    string currency = 2;
+}
+
+message CreateRequest {
+    int64 amount = 1;
+    string currency = 2;
+}
+
+message CreateResponse {
+
+
+}
+
+service Invoicer {
+    rpc Create(CreateRequest) returns (CreateResponse);
+}
+
